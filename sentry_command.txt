@@ -1,0 +1,42 @@
+
+who is owner of DB 
+hive> describe database extended db_name;
+hive> describe schema extended db_name;
+select NAME,OWNER_NAME,OWNER_TYPE from DBS;
+
+
+Creating Role assingning role to
+
+Create role test_role ( query needs to run on machine where we have access in the DB)
+
+grant role test_role to group testuser1 ( map the role to group)
+
+grant select on tablename to role test_role (select privilege on role)
+
+ACL has permission on the table 
+
+hdfs dfs -getfactl /user/hive/warehouse/tablen
+
+you can able to see the group which contain the group which is having the permission on the table 
+
+
+Provide the access to uri
+
+grant all on uri '/user/hive/warehouse/customer' to role rolename
+
+sentry Architreture 
+
+https://blogs.apache.org/sentry/entry/apache_sentry_architecture_overview
+
+
+
+
+
+
+Can we just grant access to Hive views  without providing access to base tables and can view the data?
+
+
+https://github.com/HortonworksUniversity/Essentials/blob/master/demos/ranger/README.md
+
+https://github.com/asdaraujo/auth-user-udf
+
